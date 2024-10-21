@@ -212,6 +212,7 @@ video { width: 250px; }
 <Pitfall>
 
 By default, Effect গুলো *প্রত্যেক* রেন্ডারের পরে run হয়। এ কারণেই এ জাতীয় কোড **infinite loop তৈরি করে:**
+
 ```js
 const [count, setCount] = useState(0);
 useEffect(() => {
