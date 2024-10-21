@@ -205,7 +205,7 @@ video { width: 250px; }
 
 </Sandpack>
 
-এই উদাহরণে, আপনি যে "external system" React state এর সাথে synchronize করেছেন তা হলো ব্রাউজার মিডিয়া API। আপনি legacy non-React code (যেমন jQuery plugins) থেকে declarative React component এ wrap করতে  অনুরূপ পদ্ধতি ব্যবহার করেতে পারেন। 
+এই উদাহরণে, আপনি যে "external system" React state এর সাথে synchronize করেছেন তা হলো ব্রাউজার মিডিয়া API। আপনি legacy non-React code (যেমন jQuery plugins) থেকে declarative React component এ wrap করতে  অনুরূপ পদ্ধতি ব্যবহার করতে পারেন। 
 
 মনে রাখবেন যে কোন ভিডিও প্লেয়ার কন্ট্রোল করা প্রাক্টিকালি আরও জটিল। `play()` কল fail হতে পারে, user built-in ব্রাউজার control গুলো ব্যবহার করে play বা pause করতে পারে, এবং আরও অনেক কিছু। এই উদাহরণটি খুবই সহজ এবং অসম্পূর্ণ।
 
@@ -529,7 +529,7 @@ input { display: block; margin-bottom: 20px; }
 
 `"✅ Connecting..."` দু'বার log হচ্ছে দেখা আপনাকে আসল সমস্যাটি লক্ষ্য করতে সাহায্য করে: যখন component টি আনমিউট হয় আপনার কোড সংযোগটি বন্ধ করে না।
 
-সমস্যাটি সমাধান করেতে, আপনার Effect থেকে একটি *cleanup function* return করুন:
+সমস্যাটি সমাধান করতে, আপনার Effect থেকে একটি *cleanup function* return করুন:
 
 ```js {4-6}
   useEffect(() => {
