@@ -87,7 +87,7 @@ function VideoPlayer({ src, isPlaying }) {
 }
 ```
 
-তবে, browser এর `<video>` tag এ `isPlaying` প্রপস নাই। এটি নিয়ন্ত্রণের একমাত্র উপয় হলো DOM element টিতে ম্যানুয়ালি [`play()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play) এবং  [`pause()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause) call করা। **আপনাকে `isPlaying` প্রপ্স এর value টি synchronize করতে হবে, যা `play()` এবং `pause()`কে কল করে video টি বর্তমানে বাজানো উচিৎ কিনা তা নির্দেশ করে।**
+তবে, browser এর `<video>` tag এ `isPlaying` প্রপস নাই। এটি নিয়ন্ত্রণের একমাত্র উপায় হলো DOM element টিতে ম্যানুয়ালি [`play()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play) এবং  [`pause()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause) call করা। **আপনাকে `isPlaying` প্রপ্স এর value টি synchronize করতে হবে, যা `play()` এবং `pause()`কে কল করে video টি বর্তমানে বাজানো উচিৎ কিনা তা নির্দেশ করে।**
 
 আমাদের প্রথমে `<video>` DOM node এর একটি [ref পেতে হবে](/learn/manipulating-the-dom-with-refs)।
 
