@@ -72,7 +72,7 @@ function MyComponent() {
 
 প্রতিবার যখন component রেন্ডার করবে, React স্কিন আপডেট করবে *এবং এর পরে* `useEffect` এর ভিতরের কোড রান করবে। অর্থাৎ, **`useEffect` এক টুকরা কোড রান হতে " বিলম্ব করায় " যতক্ষণ না রেন্ডারটি স্কিনে reflected হয়।**
 
-চলুন দেখা যাক কিভাবে আপনি Effect ব্যবহার করে একটি external system এর সাথে synchronize করবেন। একটি `<VideoPlayer>` React component এর কথা চিন্তা করুন। এটি কন্ট্রল করতে ভাল হবে যদি এটিতে একটি `isPlaying` প্রপস পাঠানো হয় যে এটি চালু আছে অথবা বন্ধ:
+চলুন দেখা যাক কিভাবে আপনি Effect ব্যবহার করে একটি external system এর সাথে synchronize করবেন। একটি `<VideoPlayer>` React component এর কথা চিন্তা করুন। এটি কন্ট্রোল করতে ভাল হবে যদি এটিতে একটি `isPlaying` প্রপস পাঠানো হয় যে এটি চালু আছে অথবা বন্ধ:
 
 ```js
 <VideoPlayer isPlaying={isPlaying} />;
@@ -207,7 +207,7 @@ video { width: 250px; }
 
 এই উদাহরণে, আপনি যে "external system" React state এর সাথে synchronize করেছেন তা হলো ব্রাউজার মিডিয়া API। আপনি legacy non-React code (যেমন jQuery plugins) থেকে declarative React component এ wrap করতে  অনুরূপ পদ্ধতি ব্যবহার করেতে পারেন। 
 
-মনে রাখবেন যে কোন ভিডিও প্লেয়ার কন্ট্রল করা প্রাক্টিকালি আরও জটিল। `play()` কল fail হতে পারে, user built-in ব্রাউজার control গুলো ব্যবহার করে play বা pause করতে পারে, এবং আরও অনেক কিছু। এই উদাহরণটি খুবই সহজ এবং অসম্পূর্ণ।
+মনে রাখবেন যে কোন ভিডিও প্লেয়ার কন্ট্রোল করা প্রাক্টিকালি আরও জটিল। `play()` কল fail হতে পারে, user built-in ব্রাউজার control গুলো ব্যবহার করে play বা pause করতে পারে, এবং আরও অনেক কিছু। এই উদাহরণটি খুবই সহজ এবং অসম্পূর্ণ।
 
 <Pitfall>
 
