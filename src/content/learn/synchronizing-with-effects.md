@@ -773,7 +773,7 @@ Buying বা ক্রয় করা রেন্ডারিংয়ের দ্
 
 এই প্লেগ্রাউন্ডটি আপনাকে বাস্তবে ইফেক্ট কীভাবে কাজ করে তা "একটু অনুভব করতে" সাহায্য করতে পারে।
 
-এই উদাহরণটি ইফেক্ট রান করার তিন সেকেন্ড পর ইনপুটের টেক্সট নিয়ে একটি console log করার জন্য [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) ব্যাবহার করছে। ক্লিন-আপ ফাংশনটি অপেক্ষারত timeout কে বাদ করে দেয়। "Mount the component" বাটনটি চাপার মাধ্যমে শুরু করুনঃ
+এই উদাহরণটি ইফেক্ট রান করার তিন সেকেন্ড পর ইনপুটের টেক্সট নিয়ে একটি console log করার জন্য [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) ব্যবহার করছে। ক্লিন-আপ ফাংশনটি অপেক্ষারত timeout কে বাদ করে দেয়। "Mount the component" বাটনটি চাপার মাধ্যমে শুরু করুনঃ
 
 <Sandpack>
 
