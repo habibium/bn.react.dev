@@ -397,7 +397,7 @@ video { width: 250px; }
 
 </Sandpack>
 
-dependency array তে একাধিক dependency থাকতে পারে। যদি *সবগুলো* dependency এর value গুলো previous render এর মতই থাকে কেবল তখনই React Effect টি re-runn করবে না। React dependency value গুলোকে তুলনা করতে [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison ব্যবহার করে। বিস্তারির জানতে [`useEffect` reference](/reference/react/useEffect#reference) দেখুন। 
+dependency array তে একাধিক dependency থাকতে পারে। যদি *সবগুলো* dependency এর value গুলো previous render এর মতই থাকে কেবল তখনই React Effect টি re-runn করবে না। React dependency value গুলোকে তুলনা করতে [`Object.is`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) comparison ব্যবহার করে। বিস্তারিত জানতে [`useEffect` reference](/reference/react/useEffect#reference) দেখুন। 
 
 **লক্ষ্য করুন যে আপনি আপনার dependency গুলো "choose" করতে পারছেন না।** আপনি যে dependency গুলো specify করেছেন তা যদি আপনি Effect এর মধ্যে যে কোড রেখেছেন তার উপর base করে React এর expectation এর সাথে না মিলে তাহলে আপনি একটি lint error পাবেন। এটি আপনার কোডে অনেক bug খুঁজে পাতে সাহায্য করে । যদি আপনি কিছু কোড re-run করতে না চান, [*Effect কোড edit করুন* যাতে ঐ  dependency-র "প্রয়োজন" না হয়।](/learn/lifecycle-of-reactive-effects#what-to-do-when-you-dont-want-to-re-synchronize)
 
