@@ -440,7 +440,7 @@ function VideoPlayer({ src, isPlaying }) {
     }
   }, [isPlaying]);
 ```
-এর কারণ হল `ref` object এর একটি *stable identity* রয়েছে: React গ্যারান্টি দেয় যে [প্রতি রেন্ডারে একই `useRef` কল থেকে সর্বদা একই object পাবেন](/reference/react/useRef#returns)। এটি কখনো পরিবর্তন হয় না, সুতারং  এটি নিজেই Effect টি re-run হওয়ার কারণ হতে পারেনা। অতএব, এটি বিবেচ্য বিষয় নয় যে আপনি এটি include করছেন কি করেন নাই।  এটি Includ করাও ঠিক আছে:
+এর কারণ হল `ref` object এর একটি *stable identity* রয়েছে: React গ্যারান্টি দেয় যে [প্রতি রেন্ডারে একই `useRef` কল থেকে সর্বদা একই object পাবেন](/reference/react/useRef#returns)। এটি কখনো পরিবর্তন হয় না, সুতরাং  এটি নিজেই Effect টি re-run হওয়ার কারণ হতে পারেনা। অতএব, এটি বিবেচ্য বিষয় নয় যে আপনি এটি include করছেন কি করেন নাই।  এটি Includ করাও ঠিক আছে:
 
 ```js {9}
 function VideoPlayer({ src, isPlaying }) {
@@ -456,7 +456,7 @@ function VideoPlayer({ src, isPlaying }) {
 
 `useState` দ্বারা রিটার্ন করা [`set` function গুলোরও](/reference/react/useState#setstate) stable identity রয়েছে, তাই আপনি প্রায়ই দেখতে পাবেন তাদের dependencies থেকে বাদ দেওয়া হয়েছে। যদি lint আপনাকে error ছাড়াই dependency বাদ দিতে দেয়, তবে এটি করা নিরাপদ।
 
-always-stable dependency বাদ দেওয়া তখনই কাজ করে যখন linter "দেখতে" পারে যা object টি stable। উদাহরণস্বরূপ, যদি কোন parent component থেকে `ref` pass করা হয়, আপনাকে একটি dependency array specify করতে হবে। যাইহোক, এটি ভাল কারণ আপনি জানতে পারবেন না যে parent component সবসময় একই রেফ পাস করে কিনা, অথবা শর্তসাপেক্ষে বেশ কয়েকটি রেফের একটি পাস করে কিনা। সুতারং আপনার Effect নির্ভর _করবে_ কোন ref pass করা হয়েছে তার উপর।
+always-stable dependency বাদ দেওয়া তখনই কাজ করে যখন linter "দেখতে" পারে যা object টি stable। উদাহরণস্বরূপ, যদি কোন parent component থেকে `ref` pass করা হয়, আপনাকে একটি dependency array specify করতে হবে। যাইহোক, এটি ভাল কারণ আপনি জানতে পারবেন না যে parent component সবসময় একই রেফ পাস করে কিনা, অথবা শর্তসাপেক্ষে বেশ কয়েকটি রেফের একটি পাস করে কিনা। সুতরাং আপনার Effect নির্ভর _করবে_ কোন ref pass করা হয়েছে তার উপর।
 
 </DeepDive>
 
@@ -473,7 +473,7 @@ useEffect(() => {
 });
 ```
 
-প্রত্যেকবার re-render এর পরে chat এর সাথে সংযোগ স্থাপন করা ধীর হবে, সুতারং আপনি dependency array যুক্ত করুন:
+প্রত্যেকবার re-render এর পরে chat এর সাথে সংযোগ স্থাপন করা ধীর হবে, সুতরাং আপনি dependency array যুক্ত করুন:
 
 ```js {4}
 useEffect(() => {
@@ -482,7 +482,7 @@ useEffect(() => {
 }, []);
 ```
 
-**Effect এর ভিতরের কোড কোন props or state ব্যবহার করে না, সুতারং আপনার dependency array টি `[]` (empty)। এটি React কে শুধুমাত্র তখনই এই কোডটি চালাতে বলে যখন component টি "মাউন্ট" হয়, অর্থাৎ, প্রথমবারের জন্য স্কিনে উপস্থিত হয়।**
+**Effect এর ভিতরের কোড কোন props or state ব্যবহার করে না, সুতরাং আপনার dependency array টি `[]` (empty)। এটি React কে শুধুমাত্র তখনই এই কোডটি চালাতে বলে যখন component টি "মাউন্ট" হয়, অর্থাৎ, প্রথমবারের জন্য স্কিনে উপস্থিত হয়।**
 
 আসুন code টি রান করার চেষ্টা করি:
 
@@ -521,7 +521,7 @@ input { display: block; margin-bottom: 20px; }
 
 </Sandpack>
 
-এই Effect টি কেবল মাউন্ট হওয়ার সময় চলে, সুতারং আপনি প্রত্যাশা করতে পারেন console একবার `"✅ Connecting..."` প্রিন্ট হবে। **তবে, আপনি যদি console চেক করেন, দেখবেন `"✅ Connecting..."` দুই বার প্রিন্ট হয়েছে। কেন এমন হচ্ছে?**
+এই Effect টি কেবল মাউন্ট হওয়ার সময় চলে, সুতরাং আপনি প্রত্যাশা করতে পারেন console একবার `"✅ Connecting..."` প্রিন্ট হবে। **তবে, আপনি যদি console চেক করেন, দেখবেন `"✅ Connecting..."` দুই বার প্রিন্ট হয়েছে। কেন এমন হচ্ছে?**
 
 কল্পনা করুন যে `ChatRoom` এর component টি অনেক গুলো ভিন্ন ভিন্ন স্কিন সহ একটি বৃহিত্তর app এর একটি অংশ। ব্যবহারকারী তাদের journey শুরু করে `ChatRoom` পেইজ দিয়ে। component টি মাউন্ট করে এবং `connection.connect()` কে কল করে। তারপরে কল্পনা করুন যে ব্যবহারকারী অন্য স্কিনে নেভিগেট করেছে --উদাহরণস্বরূপ, Settings পেইজে। এখন `ChatRoom` এর component আনমাউন্ট। অবশেষে, ব্যবহারকারী Back এ ক্লিক করে এবং `ChatRoom` টি আবার মাউন্ট করে। এটি একটি second connection স্থাপন করবে--তবে প্রথম connection টি কখনই বিচ্ছিন্ন হয়নি! ব্যবহারকারী অ্যাপ জুড়ে নেভিগেট করার সাথে সাথে সংযোগগুলি pulling হতে থাকবে।
 
