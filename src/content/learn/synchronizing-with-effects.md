@@ -135,7 +135,7 @@ video { width: 250px; }
 
 এই কোডটি সঠিক না হওয়ার কারণ হলো এটি রেন্ডারিং এর সময় DOM node এর সাথে কিছু একটা করার চেষ্টা করে। React এ, [রেন্ডারিং JSX এর pure calculation হওয়া উচিত](/learn/keeping-components-pure) এবং DOM কে modify করে এমন কোন side effects থাকা উচিত নয়।
 
-উপরন্তু, যখন `VideoPlayer` কে প্রথমবারের জন্য call করা হয়, এটির DOM তখন exist করে না! `play()` বা `pause()` করার জন্য এখানে কোন DOM node নাই, কারণ React জানে না কি DOM তৈরি হবে যতক্ষণ না আপনি JSX রিটার্ন করেন। 
+উপরন্তু, যখন `VideoPlayer` কে প্রথমবারের জন্য call করা হয়, এটির DOM তখন exist করে না! `play()` বা `pause()` করার জন্য এখানে কোন DOM node নাই, কারণ React জানে না কী DOM তৈরি হবে যতক্ষণ না আপনি JSX রিটার্ন করেন। 
 
 এখানে সমাধানটি হলো **রেন্ডারিং calculation এর বাইরে সরানোর জন্য `useEffect` এর দ্বারা side effect টি wrap করে রাখা:**
 
